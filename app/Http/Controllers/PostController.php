@@ -23,7 +23,7 @@ class PostController extends Controller
         $posts = Post::with('author')
                     ->latestFirst()
                     ->published()
-                    ->where('author_id', $user->id)
+                    ->byThisUser($user)
                     ->simplePaginate($this->limit);
         
         return view("blog.myposts", compact('posts'));

@@ -59,4 +59,9 @@ class Post extends Model
     {
         return $query->where("created_at", "<=", Carbon::now());
     }
+
+    public function scopeByThisUser($query, $user)
+    {
+        return $query->where('author_id', $user->id);
+    }
 }
