@@ -17,7 +17,7 @@ class BlogController extends Controller
                     ->latestFirst()
                     ->published()
                     ->simplePaginate($this->limit);
-
+        
         return view("blog.index", compact('posts'));
     }
 

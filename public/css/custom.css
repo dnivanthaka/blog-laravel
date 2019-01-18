@@ -333,3 +333,17 @@ ul.social-icons li {
 span.required {
     color: red;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+} 
+
+Body { margin-bottom:60px; } 

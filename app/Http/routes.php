@@ -25,3 +25,19 @@ Route::get('/category/{category}', [
     'uses' => 'BlogController@category',
     'as'   => 'category'
 ]);
+
+Route::auth();
+
+Route::get('/myposts', [
+    'uses' => 'PostController@index',
+    'as'   => 'blog.posts'
+]);
+
+Route::get('/myposts/new', [
+    'uses' => 'PostController@new',
+    'as'   => 'blog.posts.new'
+]);
+Route::post('/myposts/new', [
+    'uses' => 'PostController@save',
+    'as'   => 'blog.posts.save'
+]);
