@@ -33,11 +33,28 @@ Route::get('/myposts', [
     'as'   => 'blog.posts'
 ]);
 
-Route::get('/myposts/new', [
-    'uses' => 'PostController@new',
-    'as'   => 'blog.posts.new'
+Route::get('/myposts/create', [
+    'uses' => 'PostController@create',
+    'as'   => 'blog.posts.create'
 ]);
-Route::post('/myposts/new', [
+Route::post('/myposts/create',[
     'uses' => 'PostController@save',
     'as'   => 'blog.posts.save'
 ]);
+Route::get('/myposts/edit/{id}', [
+    'uses' => 'PostController@edit',
+    'as'   => 'blog.posts.edit'
+]);
+Route::patch('/myposts/edit/{id}', [
+    'uses' => 'PostController@update',
+    'as'   => 'blog.posts.update'
+]);
+Route::delete('/myposts/{id}', [
+    'uses' => 'PostController@delete',
+    'as'   => 'blog.posts.delete'
+]);
+Route::get('/myposts/publish/{id}', [
+    'uses' => 'PostController@publish',
+    'as'   => 'blog.posts.publish'
+]);
+

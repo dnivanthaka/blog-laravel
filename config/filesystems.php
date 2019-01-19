@@ -61,6 +61,10 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        'public_uploads' => [
+            'driver' => 'local',
+            'root'   => public_path().'/img',
+        ],
 
     ],
 

@@ -9,6 +9,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 class Post extends Model
 {
     protected $dates = ['published_at'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'image'];
 
     public function author()
     {
@@ -53,6 +54,11 @@ class Post extends Model
     public function scopeLatestFirst($query)
     {
         return $query->orderBy('published_at', 'desc');
+    }
+
+    public function scopeCreatedFirst($query)
+    {
+        return $query->orderBy('created_at', 'desc');
     }
 
     public function scopePublished($query)
